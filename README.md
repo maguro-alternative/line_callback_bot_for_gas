@@ -1,0 +1,2 @@
+# line_callback_bot_for_gas
+JokenのLINEBotコンテストで使うコードのひな型です。
