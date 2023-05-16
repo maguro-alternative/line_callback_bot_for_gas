@@ -30,15 +30,6 @@ function doPost(e) {
       // 送信するメッセージ
       let messages = []
 
-      // 内容がテキストメッセージだった場合
-      if(event.message.type === 'text'){
-        // 返信するフラグを立てる
-        replyFlag = True
-        messages.push({
-          'type': 'text',
-          'text': event.message.text
-        })
-      }
       // 画像が送信された場合
       if(event.message.type === 'image'){
         // 返信するフラグを立てる
@@ -91,7 +82,7 @@ function gyazoup(image){
   };
   
   return UrlFetchApp.fetch(
-    GYAZO_URL_ENDPOINT,
+    GYAZO_UPLOAD_URL,
     options
   );
 }
