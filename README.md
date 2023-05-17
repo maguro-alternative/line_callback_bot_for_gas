@@ -18,3 +18,6 @@ YouTubeを使用。
 参考記事  
 
 https://qiita.com/maguro-alternative/items/9b332bde6a1332be5f10
+
+# stickerCallback.gs
+スタンプのオウム返しのコード。
