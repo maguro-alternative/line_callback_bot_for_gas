@@ -14,7 +14,7 @@ const HEADER = {
 
 function doPost(e) {
   // 返信するかのフラグ
-  const replyFlag = false
+  let replyFlag = false
   try{
     // イベント内容を展開
     const json = JSON.parse(e.postData.contents);
@@ -30,7 +30,7 @@ function doPost(e) {
       // 画像が送信された場合
       if(event.message.type === 'sticker'){
         // 返信するフラグを立てる
-        replyFlag = True
+        replyFlag = true
         const sticker_url = LINE_STICKER_IMAGE_URL + event.message.stickerId + "/iPhone/sticker_key@2x.png"
 
         messages.push({
