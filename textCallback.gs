@@ -10,7 +10,7 @@ const HEADER = {
 
 function doPost(e) {
   // 返信するかのフラグ
-  const replyFlag = false
+  let replyFlag = false
   try{
     // イベント内容を展開
     const json = JSON.parse(e.postData.contents);
@@ -18,7 +18,7 @@ function doPost(e) {
     // 送られてきたリクエストは配列で来るのでforEachで一つ一つ処理
     json.events.forEach(function(event) {
       // リプライトークン(どのメッセージに返信するか)を取得
-      const reply_token= event.replyToken;
+      const reply_token = event.replyToken;
 
       // 送信するメッセージ
       let messages = []
@@ -26,7 +26,7 @@ function doPost(e) {
       // 内容がテキストメッセージだった場合
       if(event.message.type === 'text'){
         // 返信するフラグを立てる
-        replyFlag = True
+        replyFlag = true
         messages.push({
           'type': 'text',
           'text': event.message.text
