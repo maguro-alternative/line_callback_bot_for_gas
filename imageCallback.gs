@@ -17,7 +17,7 @@ const GYAZO_UPLOAD_URL = "https://upload.gyazo.com/api/upload"
 
 function doPost(e) {
   // 返信するかのフラグ
-  const replyFlag = false
+  let replyFlag = false
   try{
     // イベント内容を展開
     const json = JSON.parse(e.postData.contents);
@@ -33,7 +33,7 @@ function doPost(e) {
       // 画像が送信された場合
       if(event.message.type === 'image'){
         // 返信するフラグを立てる
-        replyFlag = True
+        replyFlag = true
         const image = getContents(event.message.id);
         const gyazo = JSON.parse(gyazoup(image.getBlob()));
 
